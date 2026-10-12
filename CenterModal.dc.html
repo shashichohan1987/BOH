@@ -1,0 +1,577 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Tower Suites — Rooms &amp; Rates (Sign-In: Centre Modal)</title>
+<script src="./vendor/react.js"></script>
+<script src="./vendor/react-dom.js"></script>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+@font-face{font-family:'BOH Sans';src:url('./assets/983b656054fa9c2159bc6a01ee5f202f.woff2') format('woff2');font-weight:100 900;font-style:normal;font-display:block}
+@font-face{font-family:'Bicyclette';src:url('./assets/9db1457d927ba632ee4cda88b68d3e3f.otf') format('opentype');font-weight:400;font-style:normal;font-display:block}
+@font-face{font-family:'Bicyclette';src:url('./assets/cfb515720b47851792ab42e0f9352df9.otf') format('opentype');font-weight:500 900;font-style:normal;font-display:block}
+body{margin:0;background:#f2f0ed}
+a{color:inherit}a:hover{color:inherit}
+.boh-modal-overlay{animation:boh-fade-in .22s ease-out both}
+.boh-modal-overlay.is-closing{animation:boh-fade-out .18s ease-in both}
+.boh-modal-center{animation:boh-pop-in .28s cubic-bezier(.22,1,.36,1) both}
+.boh-modal-center.is-closing{animation:boh-pop-out .18s ease-in both}
+@keyframes boh-fade-in{from{opacity:0}to{opacity:1}}
+@keyframes boh-fade-out{from{opacity:1}to{opacity:0}}
+@keyframes boh-pop-in{from{opacity:0;transform:scale(.94) translateY(6px)}to{opacity:1;transform:scale(1) translateY(0)}}
+@keyframes boh-pop-out{from{opacity:1;transform:scale(1) translateY(0)}to{opacity:0;transform:scale(.96) translateY(4px)}}
+</style>
+</helmet>
+<div style="position: relative; width: 100%; min-height: 3825px; background: #f2f0ed; font-family: 'BOH Sans', sans-serif; color: #080c33; -webkit-font-smoothing: antialiased">
+
+<!-- ================= HEADER ================= -->
+<header style="position: relative; background: #080c33; color: #ffffff; height: 219px">
+<div style="position: relative; height: 68px">
+<a href="#" aria-label="Blue Orchid Hotels home" style="position: absolute; left: 21.5px; top: 7px; width: 54px; height: 54px; display: block"><img src="./assets/a63152a43c99c59f94410818148cf845.png" alt="Blue Orchid Hotels" style="width: 54.5px; height: 54.5px; display: block"></a>
+<nav aria-label="Main" style="position: absolute; left: calc(50% - 304.5px); top: 0; height: 68px; display: flex; align-items: center; gap: 37.5px">
+<a href="#" style="color: #ffffff; text-decoration: none; font-size: 15px; font-weight: 500; letter-spacing: 1px; line-height: 20px">STAY</a>
+<a href="#" style="color: #ffffff; text-decoration: none; font-size: 15px; font-weight: 500; letter-spacing: 1px; line-height: 20px">VENUES</a>
+<a href="#" style="color: #ffffff; text-decoration: none; font-size: 15px; font-weight: 500; letter-spacing: 1px; line-height: 20px">DINE</a>
+<a href="#" style="color: #ffffff; text-decoration: none; font-size: 15px; font-weight: 500; letter-spacing: 1px; line-height: 20px">WELLNESS</a>
+<a href="#" style="color: #ffffff; text-decoration: none; font-size: 15px; font-weight: 500; letter-spacing: 1px; line-height: 20px">GALLERY</a>
+<a href="#" style="color: #ffffff; text-decoration: none; font-size: 15px; font-weight: 500; letter-spacing: 1px; line-height: 20px">OFFERS</a>
+<a href="#" style="color: #ffffff; text-decoration: none; font-size: 15px; font-weight: 500; letter-spacing: 1px; line-height: 20px">BOH CLUB</a>
+</nav>
+<div style="position: absolute; right: 0; top: 0; height: 68px; display: flex; align-items: center">
+<button type="button" aria-label="Language: English (UK)" style="width: 29px; height: 29px; padding: 0; border: 1px solid rgba(255,255,255,0.6); border-radius: 50%; overflow: hidden; background: transparent; cursor: pointer; margin-right: 15px"><img src="./assets/e5d9ea24b71ae36fd3c86e5a66e214ff.png" alt="" style="width: 32px; height: 32px; margin: -2.5px; display: block"></button>
+<div style="width: 1px; height: 68px; background: rgba(255,255,255,0.25)"></div>
+<a href="#" onClick="{{openLogin}}" style="color: #ffffff; text-decoration: none; font-size: 15px; font-weight: 500; line-height: 20px; padding: 0 15.5px 0 15px">Sign In</a>
+</div>
+</div>
+
+<div style="max-width: 1128px; margin: 0 auto; padding: 10.5px 0 0">
+<div style="display: flex; align-items: center; gap: 6px; height: 30px">
+<h1 style="margin: 0; font-family: 'Bicyclette', sans-serif; font-size: 24px; line-height: 30px; font-weight: 700; letter-spacing: 0.4px; color: #ffffff">TOWER SUITES</h1>
+<div role="img" aria-label="5 stars" style="display: flex; gap: 2.2px; margin-top: 3px">
+<svg width="17" height="16" viewBox="0 0 24 23" aria-hidden="true"><path fill="#fcc419" d="M12 0l3.1 7.6 8.2.6-6.3 5.3 2 8-7-4.4-7 4.4 2-8L.7 8.2l8.2-.6z"></path></svg>
+<svg width="17" height="16" viewBox="0 0 24 23" aria-hidden="true"><path fill="#fcc419" d="M12 0l3.1 7.6 8.2.6-6.3 5.3 2 8-7-4.4-7 4.4 2-8L.7 8.2l8.2-.6z"></path></svg>
+<svg width="17" height="16" viewBox="0 0 24 23" aria-hidden="true"><path fill="#fcc419" d="M12 0l3.1 7.6 8.2.6-6.3 5.3 2 8-7-4.4-7 4.4 2-8L.7 8.2l8.2-.6z"></path></svg>
+<svg width="17" height="16" viewBox="0 0 24 23" aria-hidden="true"><path fill="#fcc419" d="M12 0l3.1 7.6 8.2.6-6.3 5.3 2 8-7-4.4-7 4.4 2-8L.7 8.2l8.2-.6z"></path></svg>
+<svg width="17" height="16" viewBox="0 0 24 23" aria-hidden="true"><path fill="#fcc419" d="M12 0l3.1 7.6 8.2.6-6.3 5.3 2 8-7-4.4-7 4.4 2-8L.7 8.2l8.2-.6z"></path></svg>
+</div>
+</div>
+<p style="margin: 11.5px 0 0; display: flex; align-items: center; gap: 8px; font-size: 15px; line-height: 20px; color: #ffffff; height: 20px">
+<svg width="14" height="16" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="1.8" aria-hidden="true"><path d="M12 22s-7.5-6.4-7.5-12.2a7.5 7.5 0 0 1 15 0C19.5 15.6 12 22 12 22z"></path><circle cx="12" cy="9.8" r="2.6"></circle></svg>
+100 Minories, London, EC3N 1JY, United Kingdom
+</p>
+</div>
+
+<div style="position: absolute; left: 0; right: 0; top: 152px; height: 1px; background: #3a3e66"></div>
+
+<form style="position: absolute; top: 153px; left: 0; right: 0; height: 66px">
+<div style="max-width: 1128px; height: 66px; margin: 0 auto; display: flex; align-items: center">
+<div style="width: 256px; display: flex; flex-direction: column; gap: 1px">
+<span style="font-size: 13px; line-height: 18px; font-weight: 600">Hotel</span>
+<span style="font-size: 13px; line-height: 18px">Tower Suites</span>
+</div>
+<div style="width: 485.5px; display: flex; flex-direction: column; gap: 1px">
+<span style="font-size: 13px; line-height: 18px; font-weight: 600">Dates</span>
+<span style="font-size: 13px; line-height: 18px">12 Oct - 13 Oct, 2026</span>
+</div>
+<div style="display: flex; flex-direction: column; gap: 1px; align-items: center">
+<span style="font-size: 13px; line-height: 18px; font-weight: 600">Rooms &amp; Guests</span>
+<span style="font-size: 13px; line-height: 18px">1 Room, 2 Guests</span>
+</div>
+<button type="button" style="margin-left: auto; height: 34.5px; box-sizing: border-box; border: 1px solid #ffffff; border-radius: 999px; background: transparent; color: #ffffff; font-family: inherit; font-size: 12px; font-weight: 400; letter-spacing: 0.55px; white-space: nowrap; cursor: pointer; padding: 0 19px 0 19.5px">UPDATE SEARCH</button>
+</div>
+</form>
+</header>
+
+<!-- ================= MAIN ================= -->
+<main style="max-width: 1128px; margin: 0 auto; padding: 19.5px 0 50.5px">
+
+<h2 style="margin: 0; font-family: 'Bicyclette', sans-serif; font-size: 25px; line-height: 30px; font-weight: 700; color: #080c33">Recommended</h2>
+
+<!-- Recommended card -->
+<section style="margin-top: 16.5px; background: #ffffff; border: 1px solid #e7e5e1; border-radius: 12px; padding: 21px 22px 20.6px; display: grid; grid-template-columns: 371px 341px 1fr">
+<div style="display: flex; flex-direction: column">
+<div style="display: flex; align-items: center; gap: 7px; height: 22px">
+<h3 style="margin: 0; font-family: 'Bicyclette', sans-serif; font-size: 17px; line-height: 22px; font-weight: 700; color: #080c33">Superior Studio</h3>
+<span style="display: inline-flex; align-items: center; gap: 3px; font-size: 13px; color: #6b7280">
+<svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#6b7280" stroke-width="2.2" aria-hidden="true"><path d="M14 3h7v7M21 3l-8 8M10 21H3v-7M3 21l8-8"></path></svg>
+22 m²</span>
+<span style="display: inline-flex; gap: 4px">
+<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#6b7280" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="7.5" r="4"></circle><path d="M4.5 21c0-4.1 3.4-7 7.5-7s7.5 2.9 7.5 7"></path></svg>
+<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#6b7280" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="7.5" r="4"></circle><path d="M4.5 21c0-4.1 3.4-7 7.5-7s7.5 2.9 7.5 7"></path></svg>
+</span>
+</div>
+<ul style="margin: 17.8px 0 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 10.5px; font-size: 15px; line-height: 22px; color: #374151">
+<li style="display: flex; align-items: center; gap: 9px"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#2f7d4f" stroke-width="2.4" aria-hidden="true"><path d="M3.5 12.5l5.5 5.5L20.5 6.5"></path></svg>1 King Bed or 2 Single Beds</li>
+<li style="display: flex; align-items: center; gap: 9px"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#2f7d4f" stroke-width="2.4" aria-hidden="true"><path d="M3.5 12.5l5.5 5.5L20.5 6.5"></path></svg>Tea &amp; Coffee Facilities</li>
+<li style="display: flex; align-items: center; gap: 9px"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#2f7d4f" stroke-width="2.4" aria-hidden="true"><path d="M3.5 12.5l5.5 5.5L20.5 6.5"></path></svg>Air Conditioning</li>
+</ul>
+</div>
+
+<div style="position: relative; padding-left: 29px">
+<div style="position: absolute; left: 0; top: 0; width: 1px; height: 112.5px; background: #e5e7eb"></div>
+<h4 style="margin: 0; font-family: 'Bicyclette', sans-serif; font-size: 12.5px; line-height: 18px; font-weight: 700; letter-spacing: 0.8px; color: #080c33">CONDITIONS</h4>
+<ul style="margin: 18.4px 0 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 10.7px; font-size: 15px; line-height: 21.5px; color: #080c33">
+<li style="display: flex; align-items: flex-start; gap: 9px"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#2f7d4f" stroke-width="2.4" style="margin-top: 4px; flex: none" aria-hidden="true"><path d="M3.5 12.5l5.5 5.5L20.5 6.5"></path></svg><span>Free Cancellation Available <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#9ca3af" stroke-width="1.8" style="vertical-align: -1px; margin-left: 4px" role="img" aria-label="More info"><circle cx="12" cy="12" r="9.5"></circle><path d="M12 11v6M12 7.5v.5"></path></svg><br>Until 11 Oct ’26, 11:59 PM</span></li>
+<li style="display: flex; align-items: center; gap: 9px"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#2f7d4f" stroke-width="2.4" aria-hidden="true"><path d="M3.5 12.5l5.5 5.5L20.5 6.5"></path></svg>Book now, pay later</li>
+</ul>
+</div>
+
+<div style="position: relative; padding-left: 51px; display: flex; flex-direction: column; align-items: flex-start">
+<div style="position: absolute; left: 0; top: 0; width: 1px; height: 112.5px; background: #e5e7eb"></div>
+<h4 style="margin: 0; font-family: 'Bicyclette', sans-serif; font-size: 17px; line-height: 22px; font-weight: 700; color: #080c33">Total Price</h4>
+<div style="margin-top: 13.6px; height: 34px; display: flex; align-items: center; gap: 7.5px">
+<span style="display: inline-flex; align-items: center; justify-content: center; width: 85.5px; height: 22px; border-radius: 5px; background: #0019a8; color: #ffffff; font-size: 12.5px; font-weight: 500">Member rate</span>
+<span style="font-family: 'Bicyclette', sans-serif; font-size: 27px; line-height: 34px; font-weight: 700; letter-spacing: -0.5px; color: #080c33">£269.10</span>
+</div>
+<span style="margin-top: 5.8px; font-size: 15px; line-height: 22px; color: #6b7280">Public rate from £299</span>
+<span style="margin-top: 7px; font-size: 13px; line-height: 20px; color: #6b7280">Includes VAT and fees</span>
+<span style="margin-top: 2px; font-size: 13px; line-height: 20px; color: #6b7280">1 night for 2 adults</span>
+<button type="button" onClick="{{openLogin}}" style="margin-top: 20px; height: 43px; padding: 0 29.5px 0 30px; border: 0; border-radius: 999px; background: #080c33; color: #ffffff; font-family: inherit; font-size: 14.5px; font-weight: 500; white-space: nowrap; cursor: pointer">Sign in for member rate</button>
+<a href="#" style="margin-top: 8px; font-size: 13px; line-height: 18px; color: #4b5563; text-decoration: underline; text-underline-offset: 2px">Continue as guest at £299</a>
+</div>
+</section>
+
+<!-- Save bar -->
+<div style="margin-top: 23px; height: 78.5px; box-sizing: border-box; background: #f4f4f4; border: 1px solid #e9e9e9; border-radius: 12px; padding: 0 22.5px 0 22.5px; display: flex; align-items: center; justify-content: space-between">
+<p style="margin: 0; font-size: 13px; line-height: 18px; color: #080c33">Save from <strong style="font-weight: 700">10%</strong> on this booking with <a href="#" style="color: #080c33; font-weight: 600; text-decoration: underline; text-underline-offset: 2px">member rate</a>.</p>
+<button type="button" onClick="{{openCreateAccount}}" style="height: 41px; box-sizing: border-box; padding: 0 22.5px 0 23.5px; border: 1px solid #080c33; border-radius: 999px; background: transparent; color: #080c33; font-family: inherit; font-size: 12.5px; font-weight: 500; letter-spacing: 0; white-space: nowrap; cursor: pointer">SIGN UP FOR FREE</button>
+</div>
+
+<h2 style="margin: 34.5px 0 0; font-family: 'Bicyclette', sans-serif; font-size: 25px; line-height: 30px; font-weight: 700; color: #080c33">All Available Rooms</h2>
+
+<div style="margin-top: 19.3px; display: flex; flex-direction: column; gap: 21.5px">
+
+<!-- ROOM 1 -->
+<article style="display: grid; grid-template-columns: 659px 1fr; min-height: 380px; background: #ffffff; border-radius: 12px; overflow: hidden">
+<div style="position: relative; background: #d9d1c5">
+<img src="./assets/cd12cc12daf62855b215973cb9c534bf.jpg" alt="Superior Studio bedroom" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block">
+<button type="button" aria-label="Previous photo" style="position: absolute; left: 18px; top: calc(50% - 18px); width: 36px; height: 36px; border-radius: 50%; border: 0; background: #ffffff; display: flex; align-items: center; justify-content: center; padding: 0; cursor: pointer"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#080c33" stroke-width="3" aria-hidden="true"><path d="M15 4l-8 8 8 8"></path></svg></button>
+<button type="button" aria-label="Next photo" style="position: absolute; right: 18px; top: calc(50% - 18px); width: 36px; height: 36px; border-radius: 50%; border: 0; background: #ffffff; display: flex; align-items: center; justify-content: center; padding: 0; cursor: pointer"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#080c33" stroke-width="3" aria-hidden="true"><path d="M9 4l8 8-8 8"></path></svg></button>
+</div>
+<div style="padding: 22px 22px 21.7px; display: flex; flex-direction: column; justify-content: space-between">
+<div style="display: flex; flex-direction: column; align-items: flex-start">
+<h3 style="margin: 0; font-family: 'Bicyclette', sans-serif; font-size: 20px; line-height: 25px; font-weight: 700; letter-spacing: 0.3px; color: #080c33">SUPERIOR STUDIO</h3>
+<p style="margin: 7px 0 0; font-size: 15px; line-height: 20px; color: #4b5563">1 King Bed or 2 Single Beds</p>
+<p style="margin: 7px 0 0; display: flex; align-items: center; gap: 10px; font-size: 15px; line-height: 20px; font-weight: 700; color: #111827">Max Guests <span style="display: inline-flex; gap: 3px"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#6b7280" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="7.5" r="4"></circle><path d="M4.5 21c0-4.1 3.4-7 7.5-7s7.5 2.9 7.5 7"></path></svg><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#6b7280" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="7.5" r="4"></circle><path d="M4.5 21c0-4.1 3.4-7 7.5-7s7.5 2.9 7.5 7"></path></svg></span></p>
+<div style="margin-top: 10.5px; display: flex; align-items: center; gap: 15px; font-size: 15px; line-height: 20px; color: #000000">
+<span style="display: inline-flex; align-items: center; gap: 4px"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#080c33" stroke-width="2.4" aria-hidden="true"><path d="M14 3h7v7M21 3l-8 8M10 21H3v-7M3 21l8-8"></path></svg>22 m²</span>
+<span style="display: inline-flex; align-items: center; gap: 6px"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#ccbaa3" stroke-width="2.4" aria-hidden="true"><path d="M3.5 12.5l5.5 5.5L20.5 6.5"></path></svg>Tea &amp; Coffee Facilities</span>
+<span style="display: inline-flex; align-items: center; gap: 6px"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#ccbaa3" stroke-width="2.4" aria-hidden="true"><path d="M3.5 12.5l5.5 5.5L20.5 6.5"></path></svg>Air Conditioning</span>
+</div>
+<a href="#" style="margin-top: 17px; height: 34px; padding: 0 19px 0 16.5px; box-sizing: border-box; border-radius: 999px; background: #ccbaa3; color: #ffffff; text-decoration: none; display: inline-flex; align-items: center; justify-content: center; gap: 7px; font-size: 12px; letter-spacing: 0.6px; font-weight: 400; white-space: nowrap">VIEW ROOM DETAILS<svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="3" aria-hidden="true"><path d="M8 3l9 9-9 9"></path></svg></a>
+</div>
+<div style="display: flex; flex-direction: column; align-items: flex-start">
+<div style="align-self: stretch; height: 1px; background: #e5e7eb"></div>
+<div style="margin-top: 18px; height: 34px; display: flex; align-items: center; gap: 7px">
+<span style="font-size: 15px; color: #4b5563">Total for 1 night</span>
+<span style="font-family: 'Bicyclette', sans-serif; font-size: 28px; line-height: 34px; font-weight: 700; letter-spacing: -0.5px; color: #080c33">£269.10</span>
+<span style="display: inline-flex; align-items: center; justify-content: center; width: 85.5px; height: 22px; border-radius: 5px; background: #0019a8; color: #ffffff; font-size: 12.5px; font-weight: 500">Member rate</span>
+</div>
+<span style="margin-top: 6px; font-size: 16px; line-height: 22px; color: #6b7280">Public rate from £299</span>
+<span style="margin-top: 2px; font-size: 13px; line-height: 18px; color: #9ca3af">Includes VAT and fees</span>
+<button type="button" style="margin-top: 12.5px; height: 36px; padding: 0 17.5px 0 15px; border: 0; border-radius: 999px; background: #46244d; color: #ffffff; font-family: inherit; font-size: 15px; letter-spacing: 0.3px; font-weight: 500; display: inline-flex; align-items: center; justify-content: center; gap: 8px; white-space: nowrap; cursor: pointer">VIEW RATES<svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="3" aria-hidden="true"><path d="M4 8l8 8 8-8"></path></svg></button>
+</div>
+</div>
+</article>
+
+<!-- ROOM 2 -->
+<article style="display: grid; grid-template-columns: 659px 1fr; min-height: 380px; background: #ffffff; border-radius: 12px; overflow: hidden">
+<div style="position: relative; background: #d9d1c5">
+<img src="./assets/4014eee1fe97331e640781b452155a14.jpg" alt="Executive Studio" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block">
+<button type="button" aria-label="Previous photo" style="position: absolute; left: 18px; top: calc(50% - 18px); width: 36px; height: 36px; border-radius: 50%; border: 0; background: #ffffff; display: flex; align-items: center; justify-content: center; padding: 0; cursor: pointer"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#080c33" stroke-width="3" aria-hidden="true"><path d="M15 4l-8 8 8 8"></path></svg></button>
+<button type="button" aria-label="Next photo" style="position: absolute; right: 18px; top: calc(50% - 18px); width: 36px; height: 36px; border-radius: 50%; border: 0; background: #ffffff; display: flex; align-items: center; justify-content: center; padding: 0; cursor: pointer"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#080c33" stroke-width="3" aria-hidden="true"><path d="M9 4l8 8-8 8"></path></svg></button>
+</div>
+<div style="padding: 22px 22px 21.7px; display: flex; flex-direction: column; justify-content: space-between">
+<div style="display: flex; flex-direction: column; align-items: flex-start">
+<h3 style="margin: 0; font-family: 'Bicyclette', sans-serif; font-size: 20px; line-height: 25px; font-weight: 700; letter-spacing: 0.3px; color: #080c33">EXECUTIVE STUDIO</h3>
+<p style="margin: 7px 0 0; font-size: 15px; line-height: 20px; color: #4b5563">1 King Bed or 2 Single Beds</p>
+<p style="margin: 7px 0 0; display: flex; align-items: center; gap: 10px; font-size: 15px; line-height: 20px; font-weight: 700; color: #111827">Max Guests <span style="display: inline-flex; gap: 3px"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#6b7280" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="7.5" r="4"></circle><path d="M4.5 21c0-4.1 3.4-7 7.5-7s7.5 2.9 7.5 7"></path></svg><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#6b7280" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="7.5" r="4"></circle><path d="M4.5 21c0-4.1 3.4-7 7.5-7s7.5 2.9 7.5 7"></path></svg></span></p>
+<div style="margin-top: 10.5px; display: flex; align-items: center; gap: 15px; font-size: 15px; line-height: 20px; color: #000000">
+<span style="display: inline-flex; align-items: center; gap: 4px"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#080c33" stroke-width="2.4" aria-hidden="true"><path d="M14 3h7v7M21 3l-8 8M10 21H3v-7M3 21l8-8"></path></svg>30 m²</span>
+<span style="display: inline-flex; align-items: center; gap: 6px"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#ccbaa3" stroke-width="2.4" aria-hidden="true"><path d="M3.5 12.5l5.5 5.5L20.5 6.5"></path></svg>Tea &amp; Coffee Facilities</span>
+<span style="display: inline-flex; align-items: center; gap: 6px"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#ccbaa3" stroke-width="2.4" aria-hidden="true"><path d="M3.5 12.5l5.5 5.5L20.5 6.5"></path></svg>Air Conditioning</span>
+</div>
+<a href="#" style="margin-top: 17px; height: 34px; padding: 0 19px 0 16.5px; box-sizing: border-box; border-radius: 999px; background: #ccbaa3; color: #ffffff; text-decoration: none; display: inline-flex; align-items: center; justify-content: center; gap: 7px; font-size: 12px; letter-spacing: 0.6px; font-weight: 400; white-space: nowrap">VIEW ROOM DETAILS<svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="3" aria-hidden="true"><path d="M8 3l9 9-9 9"></path></svg></a>
+</div>
+<div style="display: flex; flex-direction: column; align-items: flex-start">
+<div style="align-self: stretch; height: 1px; background: #e5e7eb"></div>
+<div style="margin-top: 18px; height: 34px; display: flex; align-items: center; gap: 7px">
+<span style="font-size: 15px; color: #4b5563">Total for 1 night</span>
+<span style="font-family: 'Bicyclette', sans-serif; font-size: 28px; line-height: 34px; font-weight: 700; letter-spacing: -0.5px; color: #080c33">£296.10</span>
+<span style="display: inline-flex; align-items: center; justify-content: center; width: 85.5px; height: 22px; border-radius: 5px; background: #0019a8; color: #ffffff; font-size: 12.5px; font-weight: 500">Member rate</span>
+</div>
+<span style="margin-top: 6px; font-size: 16px; line-height: 22px; color: #6b7280">Public rate from £329</span>
+<span style="margin-top: 2px; font-size: 13px; line-height: 18px; color: #9ca3af">Includes VAT and fees</span>
+<button type="button" style="margin-top: 12.5px; height: 36px; padding: 0 17.5px 0 15px; border: 0; border-radius: 999px; background: #46244d; color: #ffffff; font-family: inherit; font-size: 15px; letter-spacing: 0.3px; font-weight: 500; display: inline-flex; align-items: center; justify-content: center; gap: 8px; white-space: nowrap; cursor: pointer">VIEW RATES<svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="3" aria-hidden="true"><path d="M4 8l8 8 8-8"></path></svg></button>
+</div>
+</div>
+</article>
+
+<!-- ROOM 3 -->
+<article style="display: grid; grid-template-columns: 659px 1fr; min-height: 380px; background: #ffffff; border-radius: 12px; overflow: hidden">
+<div style="position: relative; background: #d9d1c5">
+<img src="./assets/abf53373b8dcf00e3fcf9aedb14674d1.jpg" alt="Superior Suite" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block">
+<button type="button" aria-label="Previous photo" style="position: absolute; left: 18px; top: calc(50% - 18px); width: 36px; height: 36px; border-radius: 50%; border: 0; background: #ffffff; display: flex; align-items: center; justify-content: center; padding: 0; cursor: pointer"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#080c33" stroke-width="3" aria-hidden="true"><path d="M15 4l-8 8 8 8"></path></svg></button>
+<button type="button" aria-label="Next photo" style="position: absolute; right: 18px; top: calc(50% - 18px); width: 36px; height: 36px; border-radius: 50%; border: 0; background: #ffffff; display: flex; align-items: center; justify-content: center; padding: 0; cursor: pointer"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#080c33" stroke-width="3" aria-hidden="true"><path d="M9 4l8 8-8 8"></path></svg></button>
+</div>
+<div style="padding: 22px 22px 21.7px; display: flex; flex-direction: column; justify-content: space-between">
+<div style="display: flex; flex-direction: column; align-items: flex-start">
+<h3 style="margin: 0; font-family: 'Bicyclette', sans-serif; font-size: 20px; line-height: 25px; font-weight: 700; letter-spacing: 0.3px; color: #080c33">SUPERIOR SUITE</h3>
+<p style="margin: 7px 0 0; font-size: 15px; line-height: 20px; color: #4b5563">1 King Bed or 2 Single Beds</p>
+<p style="margin: 7px 0 0; display: flex; align-items: center; gap: 10px; font-size: 15px; line-height: 20px; font-weight: 700; color: #111827">Max Guests <span style="display: inline-flex; gap: 3px"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#6b7280" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="7.5" r="4"></circle><path d="M4.5 21c0-4.1 3.4-7 7.5-7s7.5 2.9 7.5 7"></path></svg><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#6b7280" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="7.5" r="4"></circle><path d="M4.5 21c0-4.1 3.4-7 7.5-7s7.5 2.9 7.5 7"></path></svg></span></p>
+<div style="margin-top: 10.5px; display: flex; align-items: center; gap: 15px; font-size: 15px; line-height: 20px; color: #000000">
+<span style="display: inline-flex; align-items: center; gap: 4px"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#080c33" stroke-width="2.4" aria-hidden="true"><path d="M14 3h7v7M21 3l-8 8M10 21H3v-7M3 21l8-8"></path></svg>35 m²</span>
+<span style="display: inline-flex; align-items: center; gap: 6px"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#ccbaa3" stroke-width="2.4" aria-hidden="true"><path d="M3.5 12.5l5.5 5.5L20.5 6.5"></path></svg>Tea &amp; Coffee Facilities</span>
+<span style="display: inline-flex; align-items: center; gap: 6px"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#ccbaa3" stroke-width="2.4" aria-hidden="true"><path d="M3.5 12.5l5.5 5.5L20.5 6.5"></path></svg>Air Conditioning</span>
+</div>
+<a href="#" style="margin-top: 17px; height: 34px; padding: 0 19px 0 16.5px; box-sizing: border-box; border-radius: 999px; background: #ccbaa3; color: #ffffff; text-decoration: none; display: inline-flex; align-items: center; justify-content: center; gap: 7px; font-size: 12px; letter-spacing: 0.6px; font-weight: 400; white-space: nowrap">VIEW ROOM DETAILS<svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="3" aria-hidden="true"><path d="M8 3l9 9-9 9"></path></svg></a>
+</div>
+<div style="display: flex; flex-direction: column; align-items: flex-start">
+<div style="align-self: stretch; height: 1px; background: #e5e7eb"></div>
+<div style="margin-top: 18px; height: 34px; display: flex; align-items: center; gap: 7px">
+<span style="font-size: 15px; color: #4b5563">Total for 1 night</span>
+<span style="font-family: 'Bicyclette', sans-serif; font-size: 28px; line-height: 34px; font-weight: 700; letter-spacing: -0.5px; color: #080c33">£323.10</span>
+<span style="display: inline-flex; align-items: center; justify-content: center; width: 85.5px; height: 22px; border-radius: 5px; background: #0019a8; color: #ffffff; font-size: 12.5px; font-weight: 500">Member rate</span>
+</div>
+<span style="margin-top: 6px; font-size: 16px; line-height: 22px; color: #6b7280">Public rate from £359</span>
+<span style="margin-top: 2px; font-size: 13px; line-height: 18px; color: #9ca3af">Includes VAT and fees</span>
+<button type="button" style="margin-top: 12.5px; height: 36px; padding: 0 17.5px 0 15px; border: 0; border-radius: 999px; background: #46244d; color: #ffffff; font-family: inherit; font-size: 15px; letter-spacing: 0.3px; font-weight: 500; display: inline-flex; align-items: center; justify-content: center; gap: 8px; white-space: nowrap; cursor: pointer">VIEW RATES<svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="3" aria-hidden="true"><path d="M4 8l8 8 8-8"></path></svg></button>
+</div>
+</div>
+</article>
+
+<!-- ROOM 4 (rates button sits right of the public rate, as on the live page) -->
+<article style="display: grid; grid-template-columns: 659px 1fr; min-height: 380px; background: #ffffff; border-radius: 12px; overflow: hidden">
+<div style="position: relative; background: #d9d1c5">
+<img src="./assets/3ce3e142ff29d59cdb0ed9985f0ab0b8.jpg" alt="Executive Suite" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block">
+<button type="button" aria-label="Previous photo" style="position: absolute; left: 18px; top: calc(50% - 18px); width: 36px; height: 36px; border-radius: 50%; border: 0; background: #ffffff; display: flex; align-items: center; justify-content: center; padding: 0; cursor: pointer"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#080c33" stroke-width="3" aria-hidden="true"><path d="M15 4l-8 8 8 8"></path></svg></button>
+<button type="button" aria-label="Next photo" style="position: absolute; right: 18px; top: calc(50% - 18px); width: 36px; height: 36px; border-radius: 50%; border: 0; background: #ffffff; display: flex; align-items: center; justify-content: center; padding: 0; cursor: pointer"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#080c33" stroke-width="3" aria-hidden="true"><path d="M9 4l8 8-8 8"></path></svg></button>
+</div>
+<div style="padding: 22px 22px 22px; display: flex; flex-direction: column; justify-content: space-between">
+<div style="display: flex; flex-direction: column; align-items: flex-start">
+<h3 style="margin: 0; font-family: 'Bicyclette', sans-serif; font-size: 20px; line-height: 25px; font-weight: 700; letter-spacing: 0.3px; color: #080c33">EXECUTIVE SUITE</h3>
+<p style="margin: 7px 0 0; font-size: 15px; line-height: 20px; color: #4b5563">1 King Bed and 1 Sofa Bed</p>
+<p style="margin: 7px 0 0; display: flex; align-items: center; gap: 10px; font-size: 15px; line-height: 20px; font-weight: 700; color: #111827">Max Guests <span style="display: inline-flex; gap: 3px"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#6b7280" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="7.5" r="4"></circle><path d="M4.5 21c0-4.1 3.4-7 7.5-7s7.5 2.9 7.5 7"></path></svg><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#6b7280" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="7.5" r="4"></circle><path d="M4.5 21c0-4.1 3.4-7 7.5-7s7.5 2.9 7.5 7"></path></svg><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#6b7280" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="7.5" r="4"></circle><path d="M4.5 21c0-4.1 3.4-7 7.5-7s7.5 2.9 7.5 7"></path></svg><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#6b7280" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="7.5" r="4"></circle><path d="M4.5 21c0-4.1 3.4-7 7.5-7s7.5 2.9 7.5 7"></path></svg></span></p>
+<div style="margin-top: 10.5px; display: flex; align-items: center; gap: 15px; font-size: 15px; line-height: 20px; color: #000000">
+<span style="display: inline-flex; align-items: center; gap: 4px"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#080c33" stroke-width="2.4" aria-hidden="true"><path d="M14 3h7v7M21 3l-8 8M10 21H3v-7M3 21l8-8"></path></svg>40 m²</span>
+<span style="display: inline-flex; align-items: center; gap: 6px"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#ccbaa3" stroke-width="2.4" aria-hidden="true"><path d="M3.5 12.5l5.5 5.5L20.5 6.5"></path></svg>Tea &amp; Coffee Facilities</span>
+<span style="display: inline-flex; align-items: center; gap: 6px"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#ccbaa3" stroke-width="2.4" aria-hidden="true"><path d="M3.5 12.5l5.5 5.5L20.5 6.5"></path></svg>Air Conditioning</span>
+</div>
+<a href="#" style="margin-top: 17px; height: 34px; padding: 0 19px 0 16.5px; box-sizing: border-box; border-radius: 999px; background: #ccbaa3; color: #ffffff; text-decoration: none; display: inline-flex; align-items: center; justify-content: center; gap: 7px; font-size: 12px; letter-spacing: 0.6px; font-weight: 400; white-space: nowrap">VIEW ROOM DETAILS<svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="3" aria-hidden="true"><path d="M8 3l9 9-9 9"></path></svg></a>
+</div>
+<div style="display: flex; flex-direction: column">
+<div style="height: 1px; background: #e5e7eb"></div>
+<div style="margin-top: 17px; height: 34px; display: flex; align-items: center; gap: 7px">
+<span style="font-size: 15px; color: #4b5563">Total for 1 night</span>
+<span style="font-family: 'Bicyclette', sans-serif; font-size: 28px; line-height: 34px; font-weight: 700; letter-spacing: -0.5px; color: #080c33">£377.10</span>
+<span style="display: inline-flex; align-items: center; justify-content: center; width: 85.5px; height: 22px; border-radius: 5px; background: #0019a8; color: #ffffff; font-size: 12.5px; font-weight: 500">Member rate</span>
+</div>
+<div style="margin-top: 4px; display: flex; align-items: center; justify-content: space-between">
+<div style="display: flex; flex-direction: column; gap: 1.5px">
+<span style="font-size: 16px; line-height: 22px; color: #6b7280">Public rate from £419</span>
+<span style="font-size: 13px; line-height: 18px; color: #9ca3af">Includes VAT and fees</span>
+</div>
+<button type="button" style="height: 35.5px; padding: 0 18px 0 15.5px; border: 0; border-radius: 999px; background: #46244d; color: #ffffff; font-family: inherit; font-size: 15px; letter-spacing: 0.3px; font-weight: 500; display: inline-flex; align-items: center; justify-content: center; gap: 8px; white-space: nowrap; cursor: pointer">VIEW RATES<svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="3" aria-hidden="true"><path d="M4 8l8 8 8-8"></path></svg></button>
+</div>
+</div>
+</div>
+</article>
+
+<!-- ROOM 5 -->
+<article style="display: grid; grid-template-columns: 659px 1fr; min-height: 380px; background: #ffffff; border-radius: 12px; overflow: hidden">
+<div style="position: relative; background: #d9d1c5">
+<img src="./assets/86c24f200c3846807ab06cb1a62fea95.jpg" alt="One Bedroom Apartment" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block">
+<button type="button" aria-label="Previous photo" style="position: absolute; left: 18px; top: calc(50% - 18px); width: 36px; height: 36px; border-radius: 50%; border: 0; background: #ffffff; display: flex; align-items: center; justify-content: center; padding: 0; cursor: pointer"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#080c33" stroke-width="3" aria-hidden="true"><path d="M15 4l-8 8 8 8"></path></svg></button>
+<button type="button" aria-label="Next photo" style="position: absolute; right: 18px; top: calc(50% - 18px); width: 36px; height: 36px; border-radius: 50%; border: 0; background: #ffffff; display: flex; align-items: center; justify-content: center; padding: 0; cursor: pointer"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#080c33" stroke-width="3" aria-hidden="true"><path d="M9 4l8 8-8 8"></path></svg></button>
+</div>
+<div style="padding: 22px 22px 21.7px; display: flex; flex-direction: column; justify-content: space-between">
+<div style="display: flex; flex-direction: column; align-items: flex-start">
+<h3 style="margin: 0; font-family: 'Bicyclette', sans-serif; font-size: 20px; line-height: 25px; font-weight: 700; letter-spacing: 0.3px; color: #080c33">ONE BEDROOM APARTMENT</h3>
+<p style="margin: 7px 0 0; font-size: 15px; line-height: 20px; color: #4b5563">1 Queen Bed and 1 Sofa Bed</p>
+<p style="margin: 7px 0 0; display: flex; align-items: center; gap: 10px; font-size: 15px; line-height: 20px; font-weight: 700; color: #111827">Max Guests <span style="display: inline-flex; gap: 3px"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#6b7280" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="7.5" r="4"></circle><path d="M4.5 21c0-4.1 3.4-7 7.5-7s7.5 2.9 7.5 7"></path></svg><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#6b7280" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="7.5" r="4"></circle><path d="M4.5 21c0-4.1 3.4-7 7.5-7s7.5 2.9 7.5 7"></path></svg><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#6b7280" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="7.5" r="4"></circle><path d="M4.5 21c0-4.1 3.4-7 7.5-7s7.5 2.9 7.5 7"></path></svg><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#6b7280" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="7.5" r="4"></circle><path d="M4.5 21c0-4.1 3.4-7 7.5-7s7.5 2.9 7.5 7"></path></svg></span></p>
+<div style="margin-top: 10.5px; display: flex; align-items: center; gap: 15px; font-size: 15px; line-height: 20px; color: #000000">
+<span style="display: inline-flex; align-items: center; gap: 4px"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#080c33" stroke-width="2.4" aria-hidden="true"><path d="M14 3h7v7M21 3l-8 8M10 21H3v-7M3 21l8-8"></path></svg>45 m²</span>
+<span style="display: inline-flex; align-items: center; gap: 6px"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#ccbaa3" stroke-width="2.4" aria-hidden="true"><path d="M3.5 12.5l5.5 5.5L20.5 6.5"></path></svg>Tea &amp; Coffee Facilities</span>
+<span style="display: inline-flex; align-items: center; gap: 6px"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#ccbaa3" stroke-width="2.4" aria-hidden="true"><path d="M3.5 12.5l5.5 5.5L20.5 6.5"></path></svg>Air Conditioning</span>
+</div>
+<a href="#" style="margin-top: 17px; height: 34px; padding: 0 19px 0 16.5px; box-sizing: border-box; border-radius: 999px; background: #ccbaa3; color: #ffffff; text-decoration: none; display: inline-flex; align-items: center; justify-content: center; gap: 7px; font-size: 12px; letter-spacing: 0.6px; font-weight: 400; white-space: nowrap">VIEW ROOM DETAILS<svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="3" aria-hidden="true"><path d="M8 3l9 9-9 9"></path></svg></a>
+</div>
+<div style="display: flex; flex-direction: column; align-items: flex-start">
+<div style="align-self: stretch; height: 1px; background: #e5e7eb"></div>
+<div style="margin-top: 18px; height: 34px; display: flex; align-items: center; gap: 7px">
+<span style="font-size: 15px; color: #4b5563">Total for 1 night</span>
+<span style="font-family: 'Bicyclette', sans-serif; font-size: 28px; line-height: 34px; font-weight: 700; letter-spacing: -0.5px; color: #080c33">£449.10</span>
+<span style="display: inline-flex; align-items: center; justify-content: center; width: 85.5px; height: 22px; border-radius: 5px; background: #0019a8; color: #ffffff; font-size: 12.5px; font-weight: 500">Member rate</span>
+</div>
+<span style="margin-top: 6px; font-size: 16px; line-height: 22px; color: #6b7280">Public rate from £499</span>
+<span style="margin-top: 2px; font-size: 13px; line-height: 18px; color: #9ca3af">Includes VAT and fees</span>
+<button type="button" style="margin-top: 12.5px; height: 36px; padding: 0 17.5px 0 15px; border: 0; border-radius: 999px; background: #46244d; color: #ffffff; font-family: inherit; font-size: 15px; letter-spacing: 0.3px; font-weight: 500; display: inline-flex; align-items: center; justify-content: center; gap: 8px; white-space: nowrap; cursor: pointer">VIEW RATES<svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="3" aria-hidden="true"><path d="M4 8l8 8 8-8"></path></svg></button>
+</div>
+</div>
+</article>
+
+<!-- ROOM 6 -->
+<article style="display: grid; grid-template-columns: 659px 1fr; min-height: 380px; background: #ffffff; border-radius: 12px; overflow: hidden">
+<div style="position: relative; background: #d9d1c5">
+<img src="./assets/697ae179c1c6817ff01a961c53c4c27f.jpg" alt="Signature Suite with Tower Bridge View" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block">
+<button type="button" aria-label="Previous photo" style="position: absolute; left: 18px; top: calc(50% - 18px); width: 36px; height: 36px; border-radius: 50%; border: 0; background: #ffffff; display: flex; align-items: center; justify-content: center; padding: 0; cursor: pointer"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#080c33" stroke-width="3" aria-hidden="true"><path d="M15 4l-8 8 8 8"></path></svg></button>
+<button type="button" aria-label="Next photo" style="position: absolute; right: 18px; top: calc(50% - 18px); width: 36px; height: 36px; border-radius: 50%; border: 0; background: #ffffff; display: flex; align-items: center; justify-content: center; padding: 0; cursor: pointer"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#080c33" stroke-width="3" aria-hidden="true"><path d="M9 4l8 8-8 8"></path></svg></button>
+</div>
+<div style="padding: 22px 22px 21.7px; display: flex; flex-direction: column; justify-content: space-between">
+<div style="display: flex; flex-direction: column; align-items: flex-start">
+<h3 style="margin: 0; max-width: 430px; font-family: 'Bicyclette', sans-serif; font-size: 20px; line-height: 25px; font-weight: 700; letter-spacing: 0.3px; color: #080c33">SIGNATURE SUITE WITH TOWER BRIDGE VIEW</h3>
+<p style="margin: 7px 0 0; font-size: 15px; line-height: 20px; color: #4b5563">1 King Bed and 1 Sofa Bed</p>
+<p style="margin: 7px 0 0; display: flex; align-items: center; gap: 10px; font-size: 15px; line-height: 20px; font-weight: 700; color: #111827">Max Guests <span style="display: inline-flex; gap: 3px"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#6b7280" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="7.5" r="4"></circle><path d="M4.5 21c0-4.1 3.4-7 7.5-7s7.5 2.9 7.5 7"></path></svg><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#6b7280" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="7.5" r="4"></circle><path d="M4.5 21c0-4.1 3.4-7 7.5-7s7.5 2.9 7.5 7"></path></svg><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#6b7280" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="7.5" r="4"></circle><path d="M4.5 21c0-4.1 3.4-7 7.5-7s7.5 2.9 7.5 7"></path></svg><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#6b7280" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="7.5" r="4"></circle><path d="M4.5 21c0-4.1 3.4-7 7.5-7s7.5 2.9 7.5 7"></path></svg></span></p>
+<div style="margin-top: 10.5px; display: flex; align-items: center; gap: 15px; font-size: 15px; line-height: 20px; color: #000000">
+<span style="display: inline-flex; align-items: center; gap: 4px"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#080c33" stroke-width="2.4" aria-hidden="true"><path d="M14 3h7v7M21 3l-8 8M10 21H3v-7M3 21l8-8"></path></svg>45 m²</span>
+<span style="display: inline-flex; align-items: center; gap: 6px"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#ccbaa3" stroke-width="2.4" aria-hidden="true"><path d="M3.5 12.5l5.5 5.5L20.5 6.5"></path></svg>Tea &amp; Coffee Facilities</span>
+<span style="display: inline-flex; align-items: center; gap: 6px"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#ccbaa3" stroke-width="2.4" aria-hidden="true"><path d="M3.5 12.5l5.5 5.5L20.5 6.5"></path></svg>Air Conditioning</span>
+</div>
+<a href="#" style="margin-top: 17px; height: 34px; padding: 0 19px 0 16.5px; box-sizing: border-box; border-radius: 999px; background: #ccbaa3; color: #ffffff; text-decoration: none; display: inline-flex; align-items: center; justify-content: center; gap: 7px; font-size: 12px; letter-spacing: 0.6px; font-weight: 400; white-space: nowrap">VIEW ROOM DETAILS<svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="3" aria-hidden="true"><path d="M8 3l9 9-9 9"></path></svg></a>
+</div>
+<div style="display: flex; flex-direction: column; align-items: flex-start">
+<div style="align-self: stretch; height: 1px; background: #e5e7eb"></div>
+<div style="margin-top: 18px; height: 34px; display: flex; align-items: center; gap: 7px">
+<span style="font-size: 15px; color: #4b5563">Total for 1 night</span>
+<span style="font-family: 'Bicyclette', sans-serif; font-size: 28px; line-height: 34px; font-weight: 700; letter-spacing: -0.5px; color: #080c33">£539.10</span>
+<span style="display: inline-flex; align-items: center; justify-content: center; width: 85.5px; height: 22px; border-radius: 5px; background: #0019a8; color: #ffffff; font-size: 12.5px; font-weight: 500">Member rate</span>
+</div>
+<span style="margin-top: 6px; font-size: 16px; line-height: 22px; color: #6b7280">Public rate from £599</span>
+<span style="margin-top: 2px; font-size: 13px; line-height: 18px; color: #9ca3af">Includes VAT and fees</span>
+<button type="button" style="margin-top: 12.5px; height: 36px; padding: 0 17.5px 0 15px; border: 0; border-radius: 999px; background: #46244d; color: #ffffff; font-family: inherit; font-size: 15px; letter-spacing: 0.3px; font-weight: 500; display: inline-flex; align-items: center; justify-content: center; gap: 8px; white-space: nowrap; cursor: pointer">VIEW RATES<svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="3" aria-hidden="true"><path d="M4 8l8 8 8-8"></path></svg></button>
+</div>
+</div>
+</article>
+
+</div>
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer style="background: #080c33; color: #ffffff">
+<div style="position: relative; max-width: 1633px; height: 351px; margin: 0 auto">
+<a href="#" aria-label="Blue Orchid Hospitality" style="position: absolute; left: 140px; top: 51.5px; display: block"><img src="./assets/1b6ce996b288a49e7d6472dbab5b01bd.png" alt="Blue Orchid Hospitality" style="width: 116px; height: 103px; display: block"></a>
+
+<nav aria-label="Useful links" style="position: absolute; left: 371.5px; top: 54px; display: flex; flex-direction: column">
+<span style="font-family: 'Bicyclette', sans-serif; font-size: 16px; line-height: 22px; font-weight: 700; letter-spacing: 1.5px; margin-bottom: 18.5px">USEFUL LINKS</span>
+<a href="#" style="color: #ffffff; text-decoration: none; font-size: 15px; line-height: 29px; letter-spacing: 0.4px">Explore London</a>
+<a href="#" style="color: #ffffff; text-decoration: none; font-size: 15px; line-height: 29px; letter-spacing: 0.4px">Newsletter Sign Up</a>
+<a href="#" style="color: #ffffff; text-decoration: none; font-size: 15px; line-height: 29px; letter-spacing: 0.4px">Make a Payment</a>
+<a href="#" style="color: #ffffff; text-decoration: none; font-size: 15px; line-height: 29px; letter-spacing: 0.4px">Offers</a>
+<a href="#" style="color: #ffffff; text-decoration: none; font-size: 15px; line-height: 29px; letter-spacing: 0.4px">FAQs</a>
+<a href="#" style="color: #ffffff; text-decoration: none; font-size: 15px; line-height: 29px; letter-spacing: 0.4px">Contact Us</a>
+<a href="#" style="color: #ffffff; text-decoration: none; font-size: 15px; line-height: 29px; letter-spacing: 0.4px">Terms &amp; Conditions</a>
+<a href="#" style="color: #ffffff; text-decoration: none; font-size: 15px; line-height: 29px; letter-spacing: 0.4px">Privacy Policy</a>
+</nav>
+
+<nav aria-label="Stay" style="position: absolute; left: 599.5px; top: 54px; display: flex; flex-direction: column">
+<span style="font-family: 'Bicyclette', sans-serif; font-size: 16px; line-height: 22px; font-weight: 700; letter-spacing: 1.5px; margin-bottom: 18.5px">STAY</span>
+<a href="#" style="color: #ffffff; text-decoration: none; font-size: 15px; line-height: 29px; letter-spacing: 0.4px">Tower Suites</a>
+<a href="#" style="color: #ffffff; text-decoration: none; font-size: 15px; line-height: 29px; letter-spacing: 0.4px">Tower Residences</a>
+<a href="#" style="color: #ffffff; text-decoration: none; font-size: 15px; line-height: 29px; letter-spacing: 0.4px">The Wellington</a>
+</nav>
+
+<nav aria-label="Explore" style="position: absolute; left: 827.5px; top: 56px; display: flex; flex-direction: column; gap: 18px">
+<a href="#" style="color: #ffffff; text-decoration: none; font-family: 'Bicyclette', sans-serif; font-size: 16px; line-height: 22px; font-weight: 700; letter-spacing: 1.5px">MEETINGS &amp; EVENTS</a>
+<a href="#" style="color: #ffffff; text-decoration: none; font-family: 'Bicyclette', sans-serif; font-size: 16px; line-height: 22px; font-weight: 700; letter-spacing: 1.5px">DINE</a>
+<a href="#" style="color: #ffffff; text-decoration: none; font-family: 'Bicyclette', sans-serif; font-size: 16px; line-height: 22px; font-weight: 700; letter-spacing: 1.5px">WELLNESS</a>
+<a href="#" style="color: #ffffff; text-decoration: none; font-family: 'Bicyclette', sans-serif; font-size: 16px; line-height: 22px; font-weight: 700; letter-spacing: 1.5px">BOH CLUB</a>
+</nav>
+
+<nav aria-label="Company" style="position: absolute; left: 1055.5px; top: 54px; display: flex; flex-direction: column">
+<span style="font-family: 'Bicyclette', sans-serif; font-size: 16px; line-height: 22px; font-weight: 700; letter-spacing: 1.5px; margin-bottom: 18.5px">COMPANY</span>
+<a href="#" style="color: #ffffff; text-decoration: none; font-size: 15px; line-height: 29px; letter-spacing: 0.4px">About Us</a>
+<a href="#" style="color: #ffffff; text-decoration: none; font-size: 15px; line-height: 29px; letter-spacing: 0.4px">Future Developments</a>
+<a href="#" style="color: #ffffff; text-decoration: none; font-size: 15px; line-height: 29px; letter-spacing: 0.4px">Press</a>
+<a href="#" style="color: #ffffff; text-decoration: none; font-size: 15px; line-height: 29px; letter-spacing: 0.4px">Careers</a>
+<a href="#" style="color: #ffffff; text-decoration: none; font-size: 15px; line-height: 29px; letter-spacing: 0.4px">CSR</a>
+<a href="#" style="color: #ffffff; text-decoration: none; font-size: 15px; line-height: 29px; letter-spacing: 0.4px">Modern Slavery Policy</a>
+</nav>
+
+<div style="position: absolute; left: 1283.5px; top: 54px; display: flex; flex-direction: column">
+<a href="#" style="display: flex; align-items: center; gap: 8px; color: #ffffff; text-decoration: none; font-size: 15px; line-height: 22px; letter-spacing: 0.3px"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="1.8" aria-hidden="true"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A17 17 0 0 1 3 5a2 2 0 0 1 2-2z"></path></svg>+44 (0) 203 972 1800</a>
+<a href="#" style="margin-top: 7.5px; display: flex; align-items: center; gap: 8px; color: #ffffff; text-decoration: none; font-size: 15px; line-height: 22px; letter-spacing: 0.3px"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="1.8" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="1.5"></rect><path d="M3.5 6l8.5 7 8.5-7"></path></svg>info@blueorchid.com</a>
+<div style="margin-top: 21px; display: flex; gap: 10.5px">
+<a href="#" aria-label="Facebook" style="width: 22px; height: 22px; border-radius: 50%; background: #ffffff; display: inline-flex; align-items: center; justify-content: center"><svg width="11" height="11" viewBox="0 0 24 24" aria-hidden="true"><path fill="#080c33" d="M14 8V6c0-.9.6-1 1-1h3V1h-4c-3.3 0-4.5 2.4-4.5 5v2H7v4h2.5v11H14V12h3.2l.5-4z"></path></svg></a>
+<a href="#" aria-label="Instagram" style="width: 22px; height: 22px; border-radius: 50%; background: #ffffff; display: inline-flex; align-items: center; justify-content: center"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#080c33" stroke-width="2.6" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle></svg></a>
+<a href="#" aria-label="LinkedIn" style="width: 22px; height: 22px; border-radius: 50%; background: #ffffff; display: inline-flex; align-items: center; justify-content: center"><svg width="11" height="11" viewBox="0 0 24 24" aria-hidden="true"><path fill="#080c33" d="M2 8h4.5v14H2zM4.2 1.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM9 8h4.3v2c.6-1.1 2.1-2.3 4.3-2.3 4.6 0 5.4 3 5.4 6.9V22h-4.5v-6.6c0-1.6 0-3.6-2.2-3.6s-2.6 1.7-2.6 3.5V22H9z"></path></svg></a>
+<a href="#" aria-label="TikTok" style="width: 22px; height: 22px; border-radius: 50%; background: #ffffff; display: inline-flex; align-items: center; justify-content: center"><svg width="11" height="11" viewBox="0 0 24 24" aria-hidden="true"><path fill="#080c33" d="M16.5 1h-4v14.5a3 3 0 1 1-3-3V8.4a7 7 0 1 0 7 7V8.3a8.4 8.4 0 0 0 5 1.6V5.9a5 5 0 0 1-5-4.9z"></path></svg></a>
+<a href="#" aria-label="YouTube" style="width: 22px; height: 22px; border-radius: 50%; background: #ffffff; display: inline-flex; align-items: center; justify-content: center"><svg width="12" height="12" viewBox="0 0 24 24" aria-hidden="true"><path fill="#080c33" d="M23 7.2a3 3 0 0 0-2.1-2.1C19 4.6 12 4.6 12 4.6s-7 0-8.9.5A3 3 0 0 0 1 7.2 31 31 0 0 0 .5 12a31 31 0 0 0 .5 4.8 3 3 0 0 0 2.1 2.1c1.9.5 8.9.5 8.9.5s7 0 8.9-.5a3 3 0 0 0 2.1-2.1 31 31 0 0 0 .5-4.8 31 31 0 0 0-.5-4.8zM9.7 15.1V8.9l5.8 3.1z"></path></svg></a>
+</div>
+</div>
+</div>
+
+<div style="height: 1px; background: #1d2147"></div>
+
+<div style="position: relative; max-width: 1633px; height: 261px; margin: 0 auto">
+<img src="./assets/7c7359d8e8b76e386a971be6e04afe6a.png" alt="Integrity International Group" style="position: absolute; left: 168px; top: 46.5px; width: 196.5px; height: 45.5px">
+<img src="./assets/81b73fe156d662ed9d308a4ca5e11578.png" alt="Central London Alliance" style="position: absolute; left: 388.5px; top: 61px; width: 221.5px; height: 17.5px">
+<img src="./assets/2b39eec956d0fa7f5a1bc8856db7ccdc.png" alt="Global Hospitality Services" style="position: absolute; left: 642.5px; top: 46.5px; width: 77px; height: 46px">
+<img src="./assets/5b70ecf8f07c36b1fe7776af34d81539.png" alt="Agoda Customer Review Award 2024" style="position: absolute; left: 755.5px; top: 25.5px; width: 87px; height: 86.5px">
+<img src="./assets/b6a79684125cc8d08fc502092c2ac655.png" alt="LUXlife Best Luxury Hotels Collection 2025" style="position: absolute; left: 889px; top: 25.5px; width: 71px; height: 87.5px">
+<img src="./assets/28707d684a1d1d8867fcebad945e4c75.png" alt="Serviced Apartment Awards 2026 Winner" style="position: absolute; left: 1001.5px; top: 25.5px; width: 87px; height: 87.5px">
+<img src="./assets/0bf2e1ddbfd584bd98219f4ffc23ca53.png" alt="The PA Show Best Summer Party Venue Winner" style="position: absolute; left: 1124.5px; top: 25.5px; width: 87px; height: 87.5px">
+<img src="./assets/4adcf0ad51c57a7a3c5fa857a1f68e65.png" alt="The PA Show Summer Summit 2024" style="position: absolute; left: 1255px; top: 36px; width: 71px; height: 70.5px">
+<img src="./assets/185ad6911bd3afb46e9d1cfda9c41cc4.png" alt="Tripadvisor Travellers' Choice 2022" style="position: absolute; left: 665.5px; top: 158.5px; width: 56px; height: 68px">
+<img src="./assets/cf76e05d687befc5e091742d0651280d.png" alt="Tripadvisor Travellers' Choice 2023" style="position: absolute; left: 788px; top: 157.5px; width: 57px; height: 69.5px">
+<img src="./assets/5cf5c327f678eb75803b867ef3d7a1a2.png" alt="Tripadvisor Travellers' Choice Awards 2025" style="position: absolute; left: 907px; top: 158.5px; width: 66px; height: 69px">
+</div>
+</footer>
+
+<!-- ================= BOOKING WIDGET (fixed bottom-right on the live site) ================= -->
+<aside aria-label="Booking summary" style="position: fixed; right: 18px; bottom: 18.5px; z-index: 50; width: 253.5px; box-sizing: border-box; background: #ccbaa3; border-radius: 12px; padding: 14px 14.5px 14px; color: #080c33">
+<div style="display: flex; align-items: center; justify-content: space-between; height: 22px">
+<span style="font-family: 'Bicyclette', sans-serif; font-size: 14.5px; font-weight: 700; letter-spacing: 0.6px">ROOMS</span>
+<button type="button" aria-label="Collapse" style="width: 22px; height: 22px; border-radius: 50%; border: 1px solid #080c33; background: transparent; padding: 0; display: inline-flex; align-items: center; justify-content: center; cursor: pointer"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="#080c33" stroke-width="2.5" aria-hidden="true"><path d="M4 12h16"></path></svg></button>
+</div>
+<p style="margin: 20.5px 0 0; font-size: 12.5px; line-height: 18px">Select a rate to continue.</p>
+<p style="margin: 12px 0 0; font-family: 'Bicyclette', sans-serif; font-size: 14.5px; line-height: 20px; font-weight: 700">DATE</p>
+<p style="margin: 3.5px 0 0; font-size: 14px; line-height: 20px">12 Oct - 13 Oct</p>
+<p style="margin: 0; font-size: 12.5px; line-height: 20px">1 night for 2 adults</p>
+<div style="margin-top: 10px; height: 1px; background: #bfa381"></div>
+<p style="margin: 14px 0 0; font-family: 'Bicyclette', sans-serif; font-size: 17px; line-height: 26px; font-weight: 700">Total — £0</p>
+<button type="button" style="margin-top: 11px; width: 224px; height: 40px; border: 0; border-radius: 999px; background: #686aa7; color: #ffffff; font-family: inherit; font-size: 12px; font-weight: 500; letter-spacing: 1.8px; padding: 0 0 0 1.8px; cursor: pointer">BOOK</button>
+</aside>
+
+<!-- ================= SIGN IN / CREATE ACCOUNT MODAL ================= -->
+<sc-if value="{{loginOpen}}" hint-placeholder-val="{{ false }}">
+<div class="boh-modal-overlay {{closingClass}}" style="position: fixed; inset: 0; z-index: 100; background: rgba(8,12,51,0.6); backdrop-filter: blur(2px); display: flex; align-items: center; justify-content: center">
+<div class="boh-modal-center {{closingClass}}" role="dialog" aria-modal="true" aria-labelledby="loginTitleA" style="position: relative; width: 400px; max-width: 92vw; max-height: 90vh; box-sizing: border-box; overflow-y: auto; background: #ffffff; border-radius: 12px; padding: 28.6px; box-shadow: 0 24px 64px rgba(8,12,51,0.35)">
+
+<button type="button" onClick="{{closeLogin}}" aria-label="Close" style="position: absolute; top: 14px; right: 14px; width: 32px; height: 32px; border-radius: 50%; border: 0; background: #f2f0ed; display: flex; align-items: center; justify-content: center; padding: 0; cursor: pointer"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#080c33" stroke-width="2.6" aria-hidden="true"><path d="M5 5l14 14M19 5L5 19"></path></svg></button>
+
+<div style="display: flex; flex-direction: column; align-items: center; text-align: center">
+<img src="./assets/93862a37fc67480f38d8ed9e3465f7d8.png" alt="Blue Orchid" style="width: 52px; height: 52px; display: block">
+<h2 id="loginTitleA" style="margin: 12px 0 0; font-family: 'Bicyclette', sans-serif; font-size: 20px; line-height: 26px; font-weight: 700; color: #080c33">Blue Orchid Hotels</h2>
+<p style="margin: 6px 0 0; font-size: 13px; line-height: 18px; color: #6b7280">Guest Account</p>
+</div>
+
+<!-- Tabs -->
+<div role="tablist" style="margin-top: 24px; display: flex; height: 34px; box-sizing: border-box; border: 1px solid #d1d5db; border-radius: 6px; overflow: hidden">
+<button type="button" role="tab" onClick="{{showSignin}}" style="flex: 1; border: 0; margin: 0; background: {{signinTabBg}}; color: {{signinTabColor}}; font-family: inherit; font-size: 13.5px; cursor: pointer">Sign In</button>
+<button type="button" role="tab" onClick="{{showCreate}}" style="flex: 1; border: 0; margin: 0; background: {{createTabBg}}; color: {{createTabColor}}; font-family: inherit; font-size: 13.5px; cursor: pointer">Create Account</button>
+</div>
+
+<!-- SIGN IN -->
+<sc-if value="{{isSignin}}" hint-placeholder-val="{{ true }}">
+<form style="margin: 0; display: flex; flex-direction: column">
+<label style="margin-top: 22.3px; display: flex; flex-direction: column; gap: 4.2px">
+<span style="font-size: 14.5px; line-height: 20px; font-weight: 500; color: #000000">Email Address*</span>
+<input type="email" placeholder="your@email.com" style="height: 37.6px; box-sizing: border-box; border: 1px solid #b2b4b6; border-radius: 5px; padding: 0 14px; font-family: inherit; font-size: 13.5px; color: #080c33; background: #ffffff">
+</label>
+<label style="margin-top: 15.2px; display: flex; flex-direction: column; gap: 4.2px">
+<span style="font-size: 14.5px; line-height: 20px; font-weight: 500; color: #000000">Password*</span>
+<span style="position: relative; display: block">
+<input type="password" placeholder="Your password" style="width: 100%; height: 37.6px; box-sizing: border-box; border: 1px solid #b2b4b6; border-radius: 5px; padding: 0 40px 0 14px; font-family: inherit; font-size: 13.5px; color: #080c33; background: #ffffff">
+<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#6b7280" stroke-width="1.8" style="position: absolute; right: 13px; top: 11.3px" aria-hidden="true"><path d="M2 12s3.6-6.5 10-6.5S22 12 22 12s-3.6 6.5-10 6.5S2 12 2 12z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+</span>
+</label>
+<a href="#" style="margin-top: 8.6px; align-self: flex-end; font-size: 12px; line-height: 16px; color: #0119a8; text-decoration: none">Forgot password?</a>
+<button type="button" style="margin-top: 14.8px; height: 39.3px; border: 0; border-radius: 999px; background: #0119a8; color: #ffffff; font-family: inherit; font-size: 12.5px; font-weight: 700; letter-spacing: 1.6px; cursor: pointer">SIGN IN</button>
+</form>
+</sc-if>
+
+<!-- CREATE ACCOUNT -->
+<sc-if value="{{isCreate}}" hint-placeholder-val="{{ false }}">
+<form style="margin: 0; display: flex; flex-direction: column">
+<div style="margin-top: 22.3px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10.8px">
+<label style="display: flex; flex-direction: column; gap: 4.2px; min-width: 0">
+<span style="font-size: 14.5px; line-height: 20px; font-weight: 500; color: #000000">First Name*</span>
+<input type="text" style="height: 37.6px; box-sizing: border-box; border: 1px solid #b2b4b6; border-radius: 5px; padding: 0 14px; font-family: inherit; font-size: 13.5px; color: #080c33; background: #ffffff; min-width: 0">
+</label>
+<label style="display: flex; flex-direction: column; gap: 4.2px; min-width: 0">
+<span style="font-size: 14.5px; line-height: 20px; font-weight: 500; color: #000000">Last Name*</span>
+<input type="text" style="height: 37.6px; box-sizing: border-box; border: 1px solid #b2b4b6; border-radius: 5px; padding: 0 14px; font-family: inherit; font-size: 13.5px; color: #080c33; background: #ffffff; min-width: 0">
+</label>
+</div>
+<label style="margin-top: 15.2px; display: flex; flex-direction: column; gap: 4.2px">
+<span style="font-size: 14.5px; line-height: 20px; font-weight: 500; color: #000000">Your Organisation</span>
+<input type="text" style="height: 37.6px; box-sizing: border-box; border: 1px solid #b2b4b6; border-radius: 5px; padding: 0 14px; font-family: inherit; font-size: 13.5px; color: #080c33; background: #ffffff">
+</label>
+<label style="margin-top: 15.2px; display: flex; flex-direction: column; gap: 4.2px">
+<span style="font-size: 14.5px; line-height: 20px; font-weight: 500; color: #000000">Email Address*</span>
+<input type="email" placeholder="your@email.com" style="height: 37.6px; box-sizing: border-box; border: 1px solid #b2b4b6; border-radius: 5px; padding: 0 14px; font-family: inherit; font-size: 13.5px; color: #080c33; background: #ffffff">
+</label>
+<label style="margin-top: 15.2px; display: flex; flex-direction: column; gap: 4.2px">
+<span style="font-size: 14.5px; line-height: 20px; font-weight: 500; color: #000000">Contact Phone Number*</span>
+<span style="height: 37.6px; box-sizing: border-box; border: 1px solid #b2b4b6; border-radius: 5px; padding: 0 0 0 12px; display: flex; align-items: center; gap: 4px; background: #ffffff">
+<svg width="21" height="14" viewBox="0 0 60 40" aria-hidden="true"><rect width="60" height="40" fill="#012169"></rect><path d="M0 0l60 40M60 0L0 40" stroke="#ffffff" stroke-width="8"></path><path d="M0 0l60 40M60 0L0 40" stroke="#c8102e" stroke-width="3"></path><path d="M30 0v40M0 20h60" stroke="#ffffff" stroke-width="12"></path><path d="M30 0v40M0 20h60" stroke="#c8102e" stroke-width="7"></path></svg>
+<svg width="7" height="7" viewBox="0 0 24 24" fill="none" stroke="#6b7280" stroke-width="3" aria-hidden="true"><path d="M5 9l7 7 7-7"></path></svg>
+<input type="tel" value="+44" aria-label="Phone number" style="flex: 1; min-width: 0; height: 100%; border: 0; outline-offset: -2px; padding: 0 12px 0 4px; font-family: inherit; font-size: 13.5px; color: #080c33; background: transparent">
+</span>
+</label>
+<label style="margin-top: 15.2px; display: flex; flex-direction: column; gap: 4.2px">
+<span style="font-size: 14.5px; line-height: 20px; font-weight: 500; color: #000000">City of Residence</span>
+<input type="text" style="height: 37.6px; box-sizing: border-box; border: 1px solid #b2b4b6; border-radius: 5px; padding: 0 14px; font-family: inherit; font-size: 13.5px; color: #080c33; background: #ffffff">
+</label>
+<label style="margin-top: 15.2px; display: flex; flex-direction: column; gap: 4.2px">
+<span style="font-size: 14.5px; line-height: 20px; font-weight: 500; color: #000000">Date of Birth</span>
+<span style="position: relative; display: block">
+<input type="text" placeholder="dd/mm/yyyy" style="width: 100%; height: 39.4px; box-sizing: border-box; border: 1px solid #b2b4b6; border-radius: 5px; padding: 0 40px 0 14px; font-family: inherit; font-size: 13.5px; color: #080c33; background: #ffffff">
+<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#080c33" stroke-width="2.4" style="position: absolute; right: 14px; top: 13.2px" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="1.5"></rect><path d="M3 10h18M8 3v4M16 3v4"></path></svg>
+</span>
+</label>
+<label style="margin-top: 15.2px; display: flex; flex-direction: column; gap: 4.2px">
+<span style="font-size: 14.5px; line-height: 20px; font-weight: 500; color: #000000">Password*</span>
+<span style="position: relative; display: block">
+<input type="password" placeholder="Min. 8 characters, 1 uppercase letter, 1 number" style="width: 100%; height: 37.6px; box-sizing: border-box; border: 1px solid #b2b4b6; border-radius: 5px; padding: 0 40px 0 14px; font-family: inherit; font-size: 13px; color: #080c33; background: #ffffff">
+<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#6b7280" stroke-width="1.8" style="position: absolute; right: 13px; top: 11.3px" aria-hidden="true"><path d="M2 12s3.6-6.5 10-6.5S22 12 22 12s-3.6 6.5-10 6.5S2 12 2 12z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+</span>
+</label>
+<fieldset style="margin: 15px 0 0; padding: 0; border: 0; display: flex; flex-direction: column">
+<legend style="padding: 0; font-size: 14.5px; line-height: 20px; font-weight: 500; color: #000000">What are you interested in?</legend>
+<label style="margin-top: 1px; display: flex; align-items: center; gap: 9px; height: 25px; font-size: 13px; color: #000000"><input type="checkbox" style="margin: 0; width: 14px; height: 14px; accent-color: #0119a8">Family activities</label>
+<label style="display: flex; align-items: center; gap: 9px; height: 25px; font-size: 13px; color: #000000"><input type="checkbox" style="margin: 0; width: 14px; height: 14px; accent-color: #0119a8">Fitness classes</label>
+<label style="display: flex; align-items: center; gap: 9px; height: 25px; font-size: 13px; color: #000000"><input type="checkbox" style="margin: 0; width: 14px; height: 14px; accent-color: #0119a8">London events and experiences</label>
+<label style="display: flex; align-items: center; gap: 9px; height: 25px; font-size: 13px; color: #000000"><input type="checkbox" style="margin: 0; width: 14px; height: 14px; accent-color: #0119a8">Offers at restaurants and bars</label>
+<label style="display: flex; align-items: center; gap: 9px; height: 25px; font-size: 13px; color: #000000"><input type="checkbox" style="margin: 0; width: 14px; height: 14px; accent-color: #0119a8">Spa offers</label>
+<label style="display: flex; align-items: center; gap: 9px; height: 25px; font-size: 13px; color: #000000"><input type="checkbox" style="margin: 0; width: 14px; height: 14px; accent-color: #0119a8">Weekend breaks</label>
+<label style="display: flex; align-items: center; gap: 9px; height: 25px; font-size: 13px; color: #000000"><input type="checkbox" style="margin: 0; width: 14px; height: 14px; accent-color: #0119a8">Workshops</label>
+</fieldset>
+<label style="margin-top: 8.6px; display: flex; align-items: flex-start; gap: 9px; font-size: 13px; line-height: 20px; font-weight: 700; color: #000000"><input type="checkbox" style="margin: 3px 0 0; width: 14px; height: 14px; flex: none; accent-color: #0119a8"><span>I agree with the general <a href="#" style="color: #0119a8; text-decoration: underline">terms &amp; conditions</a> and <a href="#" style="color: #0119a8; text-decoration: underline">privacy policy</a>.*</span></label>
+<button type="button" style="margin-top: 12px; height: 39.4px; border: 0; border-radius: 999px; background: #0119a8; color: #ffffff; font-family: inherit; font-size: 12.5px; font-weight: 700; letter-spacing: 1.6px; cursor: pointer">CREATE ACCOUNT</button>
+</form>
+</sc-if>
+
+<p style="margin: 22px 0 0; text-align: center; font-size: 12.5px; line-height: 18px; color: #4b5563">By continuing, you agree to our <a href="#" style="color: #0119a8; text-decoration: none">Terms</a> and <a href="#" style="color: #0119a8; text-decoration: none">Privacy Policy</a>.</p>
+</div>
+</div>
+</sc-if>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1633,"height":3825}}'>
+class Component extends DCLogic {
+constructor(props) {
+super(props);
+this.state = { loginOpen: false, loginTab: 'signin', closing: false };
+}
+renderVals() {
+const s = this.state;
+const signin = s.loginTab === 'signin';
+return {
+loginOpen: s.loginOpen,
+closingClass: s.closing ? 'is-closing' : '',
+isSignin: signin,
+isCreate: !signin,
+signinTabBg: signin ? '#e8e6f0' : '#ffffff',
+signinTabColor: signin ? '#080c33' : '#6b7280',
+createTabBg: signin ? '#ffffff' : '#e8e6f0',
+createTabColor: signin ? '#6b7280' : '#080c33',
+showSignin: () => this.setState({ loginTab: 'signin' }),
+showCreate: () => this.setState({ loginTab: 'create' }),
+openLogin: () => this.setState({ loginOpen: true, loginTab: 'signin', closing: false }),
+openCreateAccount: () => this.setState({ loginOpen: true, loginTab: 'create', closing: false }),
+closeLogin: () => {
+this.setState({ closing: true });
+setTimeout(() => this.setState({ loginOpen: false, closing: false }), 200);
+}
+};
+}
+}
+</script>
+</body>
+</html>
