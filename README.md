@@ -9,9 +9,14 @@ rather than copy wholesale.
 
 ## Contents
 
-- `Main.dc.html` — the artboard (a Design Component: an `<x-dc>`
-  template + a small logic class). The values to replicate live in its
-  inline `style="…"` attributes and the `<helmet><style>` block.
+- `RoomAndRates.html` — the rooms & rates page (a Design Component: an
+  `<x-dc>` template + a small logic class), with the sign-in centre modal
+  wired in by default. The values to replicate live in its inline
+  `style="…"` attributes and the `<helmet><style>` block.
+- `Centermodal.html` — the same page with the sign-in centre modal, as a
+  standalone link for client review.
+- `Sidemodal.html` — the same page with the sign-in right side panel, as
+  a standalone link for client review.
 - `assets/` — files uploaded to the design (images, fonts, media)
 - `support.js`, `vendor/react*.js` — the runtime that renders the
   component in a browser; not part of the design.
@@ -25,5 +30,6 @@ reference a script puts together while the page runs (for example
 
 ## Viewing
 
-Serve the folder (e.g. `python3 -m http.server`) and open `Main.dc.html`;
-some browsers block the scripts over file://.
+Serve the folder (e.g. `python3 -m http.server`) and open `RoomAndRates.html`,
+`Centermodal.html`, or `Sidemodal.html`; some browsers block the scripts
+over file://.
