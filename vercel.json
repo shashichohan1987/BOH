@@ -1,6 +1,7 @@
 {
   "framework": null,
   "rewrites": [
-    { "source": "/", "destination": "/RoomAndRates.html" }
+    { "source": "/", "destination": "/RoomAndRates.html" },
+    { "source": "/manage-booking", "destination": "/ManageBooking.html" }
   ]
 }

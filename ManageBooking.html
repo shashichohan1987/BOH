@@ -1,0 +1,296 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Manage Your Booking | Blue Orchid Hotels</title>
+<style>
+  @font-face{font-family:'BOH Sans';src:url('./assets/983b656054fa9c2159bc6a01ee5f202f.woff2') format('woff2');font-weight:100 900;font-style:normal;font-display:block}
+  @font-face{font-family:'Bicyclette';src:url('./assets/9db1457d927ba632ee4cda88b68d3e3f.otf') format('opentype');font-weight:400;font-style:normal;font-display:block}
+  @font-face{font-family:'Bicyclette';src:url('./assets/cfb515720b47851792ab42e0f9352df9.otf') format('opentype');font-weight:500 900;font-style:normal;font-display:block}
+
+  :root{
+    --navy:#080c33;
+    --cream:#f2f0ed;
+    --gold:#ccbaa3;
+    --border:#e5e7eb;
+    --text-muted:#4b5563;
+    --text-faint:#6b7280;
+  }
+
+  *{box-sizing:border-box}
+  body{margin:0;background:#ffffff;font-family:'BOH Sans',sans-serif;color:var(--navy);-webkit-font-smoothing:antialiased}
+  a{color:inherit}
+  h1,h2,h3{font-family:'Bicyclette',sans-serif;margin:0}
+  .wrap{max-width:1128px;margin:0 auto;padding:0 24px}
+
+  /* Header */
+  header{background:var(--navy);color:#fff}
+  .nav-row{display:flex;align-items:center;justify-content:space-between;height:76px;max-width:1128px;margin:0 auto;padding:0 24px}
+  .logo{display:flex;align-items:center}
+  .logo img{width:44px;height:44px;display:block}
+  nav.primary-nav{display:flex;align-items:center;gap:30px}
+  nav.primary-nav a{text-decoration:none;color:#fff;font-size:14px;font-weight:500;letter-spacing:0.8px}
+  .header-right{display:flex;align-items:center;gap:20px}
+  .sign-in{text-decoration:none;color:#fff;font-size:14px;font-weight:500}
+  @media (max-width:860px){ nav.primary-nav{display:none} }
+
+  /* Hero (full-bleed image with overlapping title card, matching the About page banner) */
+  .hero{position:relative;height:280px}
+  .hero-img-wrap{position:absolute;inset:0;overflow:hidden}
+  .hero-img-wrap img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+  .hero-title{position:absolute;left:50%;bottom:0;transform:translate(-50%,50%);z-index:2;max-width:88%;background:#ffffff;padding:16px 24px;text-align:center}
+  .hero-title h1{font-size:19px;line-height:25px;font-weight:700;text-transform:uppercase;color:var(--navy)}
+  .hero-sub{text-align:center;padding:48px 24px 40px;max-width:640px;margin:0 auto}
+  .hero-sub p{margin:0;font-size:16px;color:var(--text-muted)}
+  @media (min-width:640px){ .hero{height:340px} .hero-title{padding:22px 48px} .hero-title h1{font-size:28px;line-height:34px} .hero-sub{padding-top:64px} }
+  @media (min-width:860px){ .hero{height:420px} .hero-title{width:max-content;padding:28px 80px} .hero-title h1{font-size:38px;line-height:44px;white-space:nowrap} .hero-sub{padding-top:58px} }
+
+  /* Two-column layout: notice on the left, properties on the right (desktop) */
+  main{padding:0 0 60px}
+  .content-grid{display:block}
+
+  /* Notice card */
+  .notice{max-width:760px;margin:0 auto 52px;background:#ffffff;border:1px solid var(--border);border-radius:14px;padding:32px 36px;box-shadow:0 2px 10px rgba(8,12,51,0.04)}
+  .notice-icon{width:46px;height:46px;border-radius:50%;background:var(--cream);display:flex;align-items:center;justify-content:center;margin-bottom:18px}
+  .notice h2{font-size:21px;line-height:27px;font-weight:700;color:var(--navy)}
+  .notice p{font-size:15.5px;line-height:24px;color:var(--text-muted);margin:14px 0 0}
+  .notice ul{margin:14px 0 0;padding-left:20px;font-size:15.5px;line-height:24px;color:var(--text-muted)}
+  .notice li{margin-bottom:4px}
+  .notice .reassure{margin-top:18px;font-size:15.5px;line-height:24px;color:var(--navy);font-weight:600}
+
+  .notice-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px}
+  .btn{display:inline-flex;align-items:center;gap:8px;text-decoration:none;font-size:13px;font-weight:700;letter-spacing:0.8px;text-transform:uppercase;border-radius:999px;padding:13px 24px;white-space:nowrap}
+  .btn-primary{background:var(--gold);color:var(--navy)}
+  .btn-outline{background:transparent;color:var(--navy);border:1px solid var(--navy)}
+
+  /* Properties */
+  .section-heading{text-align:center;margin-bottom:28px}
+  .section-heading h2{font-size:25px;line-height:31px;font-weight:700;color:var(--navy)}
+  .section-heading p{margin:8px 0 0;font-size:15px;color:var(--text-faint)}
+
+  .property-grid{max-width:1000px;margin:0 auto;display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+  @media (max-width:700px){ .property-grid{grid-template-columns:1fr} }
+
+  .property-card{background:#fff;border:1px solid var(--border);border-radius:12px;padding:22px}
+  .property-card.head-office{background:var(--cream);border-color:var(--cream)}
+  .property-card h3{font-size:17px;font-weight:700;color:var(--navy);margin-bottom:12px}
+  .property-card .row{display:flex;align-items:flex-start;gap:10px;margin-top:9px;font-size:14.5px;line-height:20px;color:var(--text-muted)}
+  .property-card .row svg{flex:0 0 auto;margin-top:2px}
+  .property-card a.contact-link{text-decoration:none;color:var(--text-muted)}
+  .property-card a.contact-link:hover{color:var(--navy)}
+
+  /* Side-by-side split: notice left, properties (stacked, single column) right */
+  @media (min-width:960px){
+    .content-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start}
+    .notice{margin:0;max-width:none}
+    .section-heading{text-align:left;margin-bottom:20px}
+    .property-grid{grid-template-columns:1fr;max-width:none;margin:0}
+  }
+
+  /* Footer (adapted responsively from the brand footer) */
+  footer{background:var(--navy);color:#ffffff;margin-top:20px}
+  .footer-top{max-width:1180px;margin:0 auto;padding:50px 24px;display:flex;flex-wrap:wrap;gap:40px;justify-content:space-between}
+  .footer-logo img{width:88px;height:auto;display:block}
+  .footer-col{display:flex;flex-direction:column;min-width:140px}
+  .footer-col .col-title{font-family:'Bicyclette',sans-serif;font-size:14px;font-weight:700;letter-spacing:1.3px;margin-bottom:14px}
+  .footer-col a{color:#fff;text-decoration:none;font-size:14px;line-height:26px;letter-spacing:0.3px;opacity:0.9}
+  .footer-col a:hover{opacity:1}
+  .footer-contact a{display:flex;align-items:center;gap:8px;color:#fff;text-decoration:none;font-size:14px;line-height:22px;margin-bottom:8px}
+  .footer-social{display:flex;gap:10px;margin-top:10px}
+  .footer-social a{width:22px;height:22px;border-radius:50%;background:#fff;display:inline-flex;align-items:center;justify-content:center}
+  .footer-bottom{border-top:1px solid #1d2147;text-align:center;padding:18px 24px;font-size:13px;color:rgba(255,255,255,0.7)}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav-row">
+    <a class="logo" href="https://www.blueorchid.com/en" aria-label="Blue Orchid Hotels home">
+      <img src="./assets/a63152a43c99c59f94410818148cf845.png" alt="Blue Orchid Hotels">
+    </a>
+    <nav class="primary-nav" aria-label="Main">
+      <a href="https://www.blueorchid.com/en#">STAY</a>
+      <a href="https://www.blueorchid.com/en/meeting-conferences-events-venues">VENUES</a>
+      <a href="https://www.blueorchid.com/en/dining-restaurants-bars">DINE</a>
+      <a href="https://www.blueorchid.com/en/spa-salon-fitness-studios">WELLNESS</a>
+      <a href="https://www.blueorchid.com/en/offers-packages">OFFERS</a>
+    </nav>
+    <div class="header-right">
+      <a class="sign-in" href="https://www.blueorchid.com/en/auth/login">Sign In</a>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-img-wrap">
+    <img src="./assets/697ae179c1c6817ff01a961c53c4c27f.jpg" alt="">
+  </div>
+  <div class="hero-title">
+    <h1>Manage Your Booking</h1>
+  </div>
+</section>
+
+<div class="hero-sub">
+  <p>Looking to view, amend or cancel an existing reservation?</p>
+</div>
+
+<main>
+  <div class="wrap">
+  <div class="content-grid">
+
+    <div class="notice">
+      <div class="notice-icon">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#080c33" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 8v5"></path><circle cx="12" cy="16.2" r="0.6" fill="#080c33"></circle></svg>
+      </div>
+      <h2>We've recently upgraded our website</h2>
+      <p>
+        If you booked before our new website launched, the link in your original confirmation
+        email may no longer open here &mdash; that booking system isn't connected to this site.
+      </p>
+      <p class="reassure">Don't worry, your booking hasn't been affected.</p>
+      <p>
+        Our reservations team can look it up directly and help you with any of the following:
+      </p>
+      <ul>
+        <li>Viewing your booking details or confirmation</li>
+        <li>Amending your dates, room type or guest details</li>
+        <li>Cancelling a reservation</li>
+        <li>Invoices and payment queries</li>
+      </ul>
+      <p>
+        To help us find it quickly, have your booking reference, the name on the reservation,
+        and your stay dates ready when you get in touch.
+      </p>
+      <div class="notice-actions">
+        <a class="btn btn-primary" href="mailto:info@blueorchid.com?subject=Existing%20booking%20enquiry">Email Reservations</a>
+        <a class="btn btn-outline" href="https://www.blueorchid.com/en/contact">Go to Contact Us</a>
+      </div>
+    </div>
+
+    <div class="properties-col">
+    <div class="section-heading">
+      <h2>Contact Your Property Directly</h2>
+      <p>Reach the reservations team for the hotel you booked</p>
+    </div>
+
+    <div class="property-grid">
+
+      <div class="property-card">
+        <h3>The Wellington</h3>
+        <div class="row">
+          <svg width="14" height="16" viewBox="0 0 24 24" fill="none" stroke="#6b7280" stroke-width="1.8" aria-hidden="true"><path d="M12 22s-7.5-6.4-7.5-12.2a7.5 7.5 0 0 1 15 0C19.5 15.6 12 22 12 22z"></path><circle cx="12" cy="9.8" r="2.6"></circle></svg>
+          <a class="contact-link" href="https://maps.google.com/?q=71%20Vincent%20Square%2C%20London%2C%20SW1P%202PA" target="_blank" rel="noopener">71 Vincent Square, London, SW1P 2PA</a>
+        </div>
+        <div class="row">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#6b7280" stroke-width="1.8" aria-hidden="true"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A17 17 0 0 1 3 5a2 2 0 0 1 2-2z"></path></svg>
+          <a class="contact-link" href="tel:+4402078344740">+44 (0) 20 7834 4740</a>
+        </div>
+        <div class="row">
+          <svg width="14" height="12" viewBox="0 0 24 24" fill="none" stroke="#6b7280" stroke-width="1.8" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="1.5"></rect><path d="M3.5 6l8.5 7 8.5-7"></path></svg>
+          <a class="contact-link" href="mailto:wellington.reservations@blueorchid.com">wellington.reservations@blueorchid.com</a>
+        </div>
+      </div>
+
+      <div class="property-card">
+        <h3>Tower Residences</h3>
+        <div class="row">
+          <svg width="14" height="16" viewBox="0 0 24 24" fill="none" stroke="#6b7280" stroke-width="1.8" aria-hidden="true"><path d="M12 22s-7.5-6.4-7.5-12.2a7.5 7.5 0 0 1 15 0C19.5 15.6 12 22 12 22z"></path><circle cx="12" cy="9.8" r="2.6"></circle></svg>
+          <a class="contact-link" href="https://maps.google.com/?q=13-17%20Byward%20St%2C%20London%2C%20EC3R%205BA" target="_blank" rel="noopener">13-17 Byward St, London, EC3R 5BA</a>
+        </div>
+        <div class="row">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#6b7280" stroke-width="1.8" aria-hidden="true"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A17 17 0 0 1 3 5a2 2 0 0 1 2-2z"></path></svg>
+          <a class="contact-link" href="tel:+4402039721600">+44 (0) 203 972 1600</a>
+        </div>
+        <div class="row">
+          <svg width="14" height="12" viewBox="0 0 24 24" fill="none" stroke="#6b7280" stroke-width="1.8" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="1.5"></rect><path d="M3.5 6l8.5 7 8.5-7"></path></svg>
+          <a class="contact-link" href="mailto:reservations@blueorchid.com">reservations@blueorchid.com</a>
+        </div>
+      </div>
+
+      <div class="property-card">
+        <h3>Tower Suites</h3>
+        <div class="row">
+          <svg width="14" height="16" viewBox="0 0 24 24" fill="none" stroke="#6b7280" stroke-width="1.8" aria-hidden="true"><path d="M12 22s-7.5-6.4-7.5-12.2a7.5 7.5 0 0 1 15 0C19.5 15.6 12 22 12 22z"></path><circle cx="12" cy="9.8" r="2.6"></circle></svg>
+          <a class="contact-link" href="https://maps.google.com/?q=100%20Minories%2C%20London%2C%20EC3N%201JY" target="_blank" rel="noopener">100 Minories, London, EC3N 1JY</a>
+        </div>
+        <div class="row">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#6b7280" stroke-width="1.8" aria-hidden="true"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A17 17 0 0 1 3 5a2 2 0 0 1 2-2z"></path></svg>
+          <a class="contact-link" href="tel:+4402039721600">+44 (0) 203 972 1600</a>
+        </div>
+        <div class="row">
+          <svg width="14" height="12" viewBox="0 0 24 24" fill="none" stroke="#6b7280" stroke-width="1.8" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="1.5"></rect><path d="M3.5 6l8.5 7 8.5-7"></path></svg>
+          <a class="contact-link" href="mailto:towersuites.reservations@blueorchid.com">towersuites.reservations@blueorchid.com</a>
+        </div>
+      </div>
+
+      <div class="property-card head-office">
+        <h3>Head Office</h3>
+        <div class="row" style="color:var(--navy)">Blue Orchid Hotels Ltd</div>
+        <div class="row">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#6b7280" stroke-width="1.8" aria-hidden="true"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A17 17 0 0 1 3 5a2 2 0 0 1 2-2z"></path></svg>
+          <a class="contact-link" href="tel:+442039721800">+44 (0) 203 972 1800</a>
+        </div>
+        <div class="row">
+          <svg width="14" height="12" viewBox="0 0 24 24" fill="none" stroke="#6b7280" stroke-width="1.8" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="1.5"></rect><path d="M3.5 6l8.5 7 8.5-7"></path></svg>
+          <a class="contact-link" href="mailto:info@blueorchid.com">info@blueorchid.com</a>
+        </div>
+      </div>
+
+    </div>
+    </div>
+
+  </div>
+  </div>
+</main>
+
+<footer>
+  <div class="footer-top">
+    <a class="footer-logo" href="https://www.blueorchid.com/en" aria-label="Blue Orchid Hospitality">
+      <img src="./assets/1b6ce996b288a49e7d6472dbab5b01bd.png" alt="Blue Orchid Hospitality">
+    </a>
+
+    <nav class="footer-col" aria-label="Useful links">
+      <span class="col-title">USEFUL LINKS</span>
+      <a href="https://www.blueorchid.com/en/offers-packages">Offers</a>
+      <a href="https://www.blueorchid.com/en/faqs">FAQs</a>
+      <a href="https://www.blueorchid.com/en/contact">Contact Us</a>
+      <a href="https://www.blueorchid.com/en/terms">Terms &amp; Conditions</a>
+      <a href="https://www.blueorchid.com/en/privacy">Privacy Policy</a>
+    </nav>
+
+    <nav class="footer-col" aria-label="Stay">
+      <span class="col-title">STAY</span>
+      <a href="https://www.blueorchid.com/en/hotels/gb/london/london-tower-suites">Tower Suites</a>
+      <a href="https://www.blueorchid.com/en/hotels/gb/london/the-tower-residences">Tower Residences</a>
+      <a href="https://www.blueorchid.com/en/hotels/gb/london/wellington-hotel-by-blue-orchid">The Wellington</a>
+    </nav>
+
+    <nav class="footer-col" aria-label="Company">
+      <span class="col-title">COMPANY</span>
+      <a href="https://www.blueorchid.com/en/about">About Us</a>
+      <a href="https://www.blueorchid.com/en/careers">Careers</a>
+      <a href="https://www.blueorchid.com/en/csr">CSR</a>
+    </nav>
+
+    <div class="footer-col footer-contact">
+      <a href="tel:+442039721800">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="1.8" aria-hidden="true"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A17 17 0 0 1 3 5a2 2 0 0 1 2-2z"></path></svg>
+        +44 (0) 203 972 1800
+      </a>
+      <a href="mailto:info@blueorchid.com">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="1.8" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="1.5"></rect><path d="M3.5 6l8.5 7 8.5-7"></path></svg>
+        info@blueorchid.com
+      </a>
+      <div class="footer-social">
+        <a href="https://www.facebook.com/BlueOrchidHotels" aria-label="Facebook"><svg width="11" height="11" viewBox="0 0 24 24" aria-hidden="true"><path fill="#080c33" d="M14 8V6c0-.9.6-1 1-1h3V1h-4c-3.3 0-4.5 2.4-4.5 5v2H7v4h2.5v11H14V12h3.2l.5-4z"></path></svg></a>
+        <a href="https://www.instagram.com/blueorchidgroup/" aria-label="Instagram"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#080c33" stroke-width="2.6" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle></svg></a>
+        <a href="https://www.linkedin.com/company/blue-orchid-hotels/" aria-label="LinkedIn"><svg width="11" height="11" viewBox="0 0 24 24" aria-hidden="true"><path fill="#080c33" d="M2 8h4.5v14H2zM4.2 1.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM9 8h4.3v2c.6-1.1 2.1-2.3 4.3-2.3 4.6 0 5.4 3 5.4 6.9V22h-4.5v-6.6c0-1.6 0-3.6-2.2-3.6s-2.6 1.7-2.6 3.5V22H9z"></path></svg></a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">&copy; Blue Orchid Hotels Ltd. All rights reserved.</div>
+</footer>
+
+</body>
+</html>
